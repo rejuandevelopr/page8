@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Incident Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+        .oscreen_one{
+            background-image: url('https://i.ibb.co/cYdsCWT/image-5.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            position: relative;
+        }
+
+        .zone_main{
+            margin-left: 10px;
+            margin-right: 10px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+        }
+        
+        .zonehead_one{
+            background-color: rgba(255, 199, 0, 1);
+            padding: 5px;
+            font-size: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            color: white;
+        }
+        .zonecontent_one{
+            background-color: rgba(255, 199, 0, 1);
+            padding: 5px;
+            color: white;
+        }
+
+
+        .zonehead_two{
+            background-color: rgba(80, 205, 137, 1);
+            padding: 5px;
+            font-size: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            color: white;
+        }
+        .zonecontent_two{
+            background-color: rgba(80, 205, 137, 1);
+            padding: 5px;
+            color: white;
+        }
+
+        .zonehead_three{
+            background-color: rgba(80, 205, 137, 1);
+            padding: 5px;
+            font-size: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            color: white;
+        }
+        .zonecontent_three{
+            background-color: rgba(80, 205, 137, 1);
+            padding: 5px;
+            color: white;
+        }
+
+        .zonehead_four{
+            background-color: rgba(241, 65, 108, 1);
+            padding: 5px;
+            font-size: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            color: white;
+        }
+        .zonecontent_four{
+            background-color: rgba(241, 65, 108, 1);
+            padding: 5px;
+            color: white;
+        }
+
+        .zonehead_five{
+            background-color: rgba(241, 65, 108, 1);
+            padding: 5px;
+            font-size: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            color: white;
+        }
+        .zonecontent_five{
+            background-color: rgba(241, 65, 108, 1);
+            padding: 5px;
+            color: white;
+        }
+
+        .zonehead_six{
+            background-color: rgba(255, 199, 0, 1);
+            padding: 5px;
+            font-size: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            color: white;
+        }
+        .zonecontent_six{
+            background-color: rgba(255, 199, 0, 1);
+            padding: 5px;
+            color: white;
+        }
+        .modal-header{
+            border-bottom: 20px solid rgba(80, 205, 137, 1) !important;
+        }
+
+        @media screen and (max-width:768px) {
+            .zonecontent_one{
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+            .zonecontent_two{
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+            .zonecontent_three{
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    
+
+    <section class="oscreen_one">    
+
+        <div class="zone_main">
+
+            <div class="row gy-2">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-4 text-center" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#zoneModal" data-zone="1">
+                            <div class="zonehead_one">
+                                Zone 1
+                            </div>
+                            <div class="zonecontent_one">
+                                747 Alarm
+                            </div>
+                        </div>
+
+                        <div class="col-4 text-center" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#zoneModal2" data-zone="1">
+                            <div class="zonehead_two">
+                                Zone 2
+                            </div>
+                            <div class="zonecontent_two">
+                                12 Alarm
+                            </div>
+                        </div>
+
+                        <div class="col-4 text-center" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#zoneModal3" data-zone="1">
+                            <div class="zonehead_three">
+                                Zone 3
+                            </div>
+                            <div class="zonecontent_three">
+                                100 Alarm
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-4 text-center" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#zoneModal4" data-zone="1">
+                            <div class="zonehead_four">
+                                Zone 4
+                            </div>
+                            <div class="zonecontent_four">
+                                1236 Alarm
+                            </div>
+                        </div>
+
+                        <div class="col-4 text-center" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#zoneModal5" data-zone="1">
+                            <div class="zonehead_five">
+                                Zone 5
+                            </div>
+                            <div class="zonecontent_five">
+                                6345 Alarm
+                            </div>
+                        </div>
+
+                        <div class="col-4 text-center" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#zoneModal6" data-zone="1">
+                            <div class="zonehead_six">
+                                Zone 6
+                            </div>
+                            <div class="zonecontent_six">
+                                345 Alarm
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+           
+
+        </div>
+
+        <div class="modal fade" id="zoneModal" tabindex="-1" aria-labelledby="zoneModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="zoneModalLabel">Zone 1</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="zoneModalBody">
+                        <div class="row gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    MTB
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Basement
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Ground
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Stn Mezzanine
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    3
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Arrival
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Departure
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Mezzanine
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    CP
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down fa-rotate-270" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    CP
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down fa-rotate-270" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="modal fade" id="zoneModal2" tabindex="-1" aria-labelledby="zoneModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="zoneModalLabel">Zone 2</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="zoneModalBody">
+                        <div class="row gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    MTB
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Basement
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Ground
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Stn Mezzanine
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    3
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Arrival
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Departure
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Mezzanine
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    CP
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down fa-rotate-270" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    CP
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down fa-rotate-270" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="zoneModal3" tabindex="-1" aria-labelledby="zoneModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="zoneModalLabel">Zone 3</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="zoneModalBody">
+                        <div class="row gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    MTB
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Basement
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Ground
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Stn Mezzanine
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    3
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Arrival
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Departure
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Mezzanine
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    CP
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down fa-rotate-270" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    CP
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down fa-rotate-270" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="zoneModal4" tabindex="-1" aria-labelledby="zoneModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="zoneModalLabel">Zone 4</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="zoneModalBody">
+                        <div class="row gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    MTB
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Basement
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Ground
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Stn Mezzanine
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    3
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Arrival
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Departure
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Mezzanine
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    CP
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down fa-rotate-270" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    CP
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down fa-rotate-270" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="zoneModal5" tabindex="-1" aria-labelledby="zoneModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="zoneModalLabel">Zone 5</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="zoneModalBody">
+                        <div class="row gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    MTB
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Basement
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Ground
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Stn Mezzanine
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    3
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Arrival
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Departure
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Mezzanine
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    CP
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down fa-rotate-270" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    CP
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down fa-rotate-270" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="zoneModal6" tabindex="-1" aria-labelledby="zoneModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="zoneModalLabel">Zone 6</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="zoneModalBody">
+                        <div class="row gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    MTB
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Basement
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Ground
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    2
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Stn Mezzanine
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    3
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Arrival
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Departure
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    Mezzanine
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    CP
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down fa-rotate-270" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 gx-3">
+                            <div class="col-6 text-center">
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    CP
+                                </div>
+                                
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                    12
+                                </div>
+                               
+                            </div>
+                            <div class="col-3 text-center" >
+                                <div style="background-color: rgba(246, 245, 245, 1); padding: 8px 5px 5px 5px; height: 40px; border-radius: 5px;">
+                                     <button style="border: 0; background-color: transparent;"><i class="fa-sharp fa-solid fa-angle-down fa-rotate-270" style="color: #f1416c;"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+
+        
+           
+    </section>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const zoneElements = document.querySelectorAll('[data-zone]');
+        const zoneModal = new bootstrap.Modal(document.getElementById('zoneModal'));
+
+        zoneElements.forEach((element) => {
+            element.addEventListener('click', () => {
+                const zone = element.getAttribute('data-zone');
+                const zonehead = element.querySelector('.zonehead');
+                const zonecontent = element.querySelector('.zonecontent');
+
+                const modalTitle = document.getElementById('zoneModalLabel');
+                modalTitle.textContent = zonehead.textContent;
+
+                const modalBody = document.getElementById('zoneModalBody');
+                modalBody.innerHTML = zonecontent.innerHTML;
+
+                zoneModal.show();
+            });
+        });
+    </script>
+
+    
+</body>
+</html>
